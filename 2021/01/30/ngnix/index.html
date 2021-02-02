@@ -536,91 +536,37 @@
 <p>如果使用cmd命令窗口启动nginx， 关闭cmd窗口是不能结束nginx进程的，可使用两种方法关闭nginx</p>
 <p>(1)输入nginx命令 <code>nginx -s stop</code>(快速停止nginx) 或 <code>nginx -s quit</code>(完整有序的停止nginx)</p>
 <p>(2)使用taskkill <code>taskkill /f /t /im nginx.exe</code></p>
-<pre><code>taskkill是用来终止进程的，/f是强制终止 ./t终止指定的进程和任何由此启动的子进程。/im示指定的进程名称 .
-</code></pre>
+<figure class="highlight jboss-cli"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">taskkill是用来终止进程的，<span class="hljs-string">/f</span>是强制终止 <span class="hljs-string">./t</span>终止指定的进程和任何由此启动的子进程。<span class="hljs-string">/im</span>示指定的进程名称 .<br></code></pre></td></tr></tbody></table></figure>
 <h2 id="linux下安装"><a href="#linux下安装" class="headerlink" title="linux下安装"></a>linux下安装</h2><p><strong>1、安装gcc</strong></p>
 <p>安装 nginx 需要先将官网下载的源码进行编译，编译依赖 gcc 环境，如果没有 gcc 环境，则需要安装：</p>
-<pre><code>yum install gcc-c++
-</code></pre>
+<figure class="highlight brainfuck"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-comment">yum</span> <span class="hljs-comment">install</span> <span class="hljs-comment">gcc</span><span class="hljs-literal">-</span><span class="hljs-comment">c</span>++<br></code></pre></td></tr></tbody></table></figure>
 <p><strong>2、PCRE pcre-devel 安装</strong></p>
 <p>PCRE(Perl Compatible Regular Expressions) 是一个Perl库，包括 perl 兼容的正则表达式库。nginx 的 http 模块使用 pcre 来解析正则表达式，所以需要在 linux 上安装 pcre 库，pcre-devel 是使用 pcre 开发的一个二次开发库。nginx也需要此库。命令：</p>
-<pre><code>yum install -y pcre pcre-devel
-</code></pre>
+<figure class="highlight cmake"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">yum <span class="hljs-keyword">install</span> -y pcre pcre-devel<br></code></pre></td></tr></tbody></table></figure>
 <p><strong>3、zlib 安装</strong></p>
 <p>zlib 库提供了很多种压缩和解压缩的方式， nginx 使用 zlib 对 http 包的内容进行 gzip ，所以需要在 Centos 上安装 zlib 库。</p>
-<pre><code>yum install -y zlib zlib-devel
-</code></pre>
+<figure class="highlight nsis"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nsis">yum install -y <span class="hljs-literal">zlib</span> <span class="hljs-literal">zlib</span>-devel<br></code></pre></td></tr></tbody></table></figure>
 <p><strong>4、OpenSSL 安装</strong><br>OpenSSL 是一个强大的安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及 SSL 协议，并提供丰富的应用程序供测试或其它目的使用。<br>nginx 不仅支持 http 协议，还支持 https（即在ssl协议上传输http），所以需要在 Centos 安装 OpenSSL 库。</p>
-<pre><code>yum install -y openssl openssl-devel
-</code></pre>
+<figure class="highlight cmake"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">yum <span class="hljs-keyword">install</span> -y openssl openssl-devel<br></code></pre></td></tr></tbody></table></figure>
 <p><strong>5、下载安装包</strong></p>
 <p>手动下载.tar.gz安装包，地址：<a target="_blank" rel="noopener" href="https://nginx.org/en/download.html">https://nginx.org/en/download.html</a></p>
 <p><img src="https://kuangstudy.oss-cn-beijing.aliyuncs.com/bbs/2021/01/25/kuangstudyf51b946d-fda4-4675-b913-2084e028a5c0.png" alt="img"></p>
 <p>下载完毕上传到服务器上 /root</p>
 <p><strong>6、解压</strong></p>
-<pre><code>tar -zxvf nginx-1.18.0.tar.gzcd nginx-1.18.0
-</code></pre>
+<figure class="highlight apache"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">tar</span> -zxvf nginx-<span class="hljs-number">1</span>.<span class="hljs-number">18</span>.<span class="hljs-number">0</span>.tar.gzcd nginx-<span class="hljs-number">1</span>.<span class="hljs-number">18</span>.<span class="hljs-number">0</span><br></code></pre></td></tr></tbody></table></figure>
 <p><img src="https://kuangstudy.oss-cn-beijing.aliyuncs.com/bbs/2021/01/25/kuangstudyd8290598-ede7-4b4b-875b-2f447a9c001f.png" alt="img"></p>
 <p><strong>7、配置</strong></p>
 <p>使用默认配置，在nginx根目录下执行</p>
-<pre><code>./configuremakemake install
-</code></pre>
+<figure class="highlight cmake"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">./configuremakemake <span class="hljs-keyword">install</span><br></code></pre></td></tr></tbody></table></figure>
 <p>查找安装路径： <code>whereis nginx</code></p>
 <p><img src="https://kuangstudy.oss-cn-beijing.aliyuncs.com/bbs/2021/01/25/kuangstudyf80f8dc2-d5df-4bc2-933d-6ce11f388f6e.png" alt="img"></p>
-<h2 id="Nginx常用命令"><a href="#Nginx常用命令" class="headerlink" title="Nginx常用命令"></a>Nginx常用命令</h2><pre><code>cd /usr/local/nginx/sbin/./nginx  启动./nginx -s stop  停止./nginx -s quit  安全退出./nginx -s reload  重新加载配置文件ps aux|grep nginx  查看nginx进程
-</code></pre>
+<h2 id="Nginx常用命令"><a href="#Nginx常用命令" class="headerlink" title="Nginx常用命令"></a>Nginx常用命令</h2><figure class="highlight gradle"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gradle">cd <span class="hljs-regexp">/usr/</span>local<span class="hljs-regexp">/nginx/</span>sbin<span class="hljs-regexp">/./</span>nginx  启动.<span class="hljs-regexp">/nginx -s stop  停止./</span>nginx -s quit  安全退出./nginx -s reload  重新加载配置文件ps aux|<span class="hljs-keyword">grep</span> nginx  查看nginx进程<br></code></pre></td></tr></tbody></table></figure>
 <p>启动成功访问 服务器ip:80</p>
 <p><img src="https://kuangstudy.oss-cn-beijing.aliyuncs.com/bbs/2021/01/25/kuangstudyd64b251b-817c-436b-b7a0-57da7bb48cd1.png" alt="img"></p>
 <p>注意：如何连接不上，检查阿里云安全组是否开放端口，或者服务器防火墙是否开放端口！<br>相关命令：</p>
-<pre><code># 开启service firewalld start# 重启service firewalld restart# 关闭service firewalld stop# 查看防火墙规则firewall-cmd --list-all# 查询端口是否开放firewall-cmd --query-port=8080/tcp# 开放80端口firewall-cmd --permanent --add-port=80/tcp# 移除端口firewall-cmd --permanent --remove-port=8080/tcp#重启防火墙(修改配置后要重启防火墙)firewall-cmd --reload# 参数解释1、firwall-cmd：是Linux提供的操作firewall的一个工具；2、--permanent：表示设置为持久；3、--add-port：标识添加的端口；
-</code></pre>
-<h1 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h1><pre><code>upstream lb{   
-server 127.0.0.1:8080 weight=1;  
-server 127.0.0.1:8081 weight=1;}
-location / {  
-proxy_pass http://lb;
-}
-</code></pre>
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><pre><code class="xml">########### 每个指令必须有分号结束。#################
-#user administrator administrators;  #配置用户或者组，默认为nobody nobody。
-#worker_processes 2;  #允许生成的进程数，默认为1
-#pid /nginx/pid/nginx.pid;   #指定nginx进程运行文件存放地址
-error_log log/error.log debug;  #制定日志路径，级别。这个设置可以放入全局块，http块，server块，级别以此为：debug|info|notice|warn|error|crit|alert|emerg
-events {
-    accept_mutex on;   #设置网路连接序列化，防止惊群现象发生，默认为on
-    multi_accept on;  #设置一个进程是否同时接受多个网络连接，默认为off
-    #use epoll;      #事件驱动模型，select|poll|kqueue|epoll|resig|/dev/poll|eventport
-    worker_connections  1024;    #最大连接数，默认为512
-}
-http {
-    include       mime.types;   #文件扩展名与文件类型映射表
-    default_type  application/octet-stream; #默认文件类型，默认为text/plain
-    #access_log off; #取消服务日志    
-    log_format myFormat '$remote_addr–$remote_user [$time_local] $request $status $body_bytes_sent $http_referer $http_user_agent $http_x_forwarded_for'; #自定义格式
-    access_log log/access.log myFormat;  #combined为日志格式的默认值
-    sendfile on;   #允许sendfile方式传输文件，默认为off，可以在http块，server块，location块。
-    sendfile_max_chunk 100k;  #每个进程每次调用传输数量不能大于设定的值，默认为0，即不设上限。
-    keepalive_timeout 65;  #连接超时时间，默认为75s，可以在http，server，location块。
-
-    upstream mysvr {   
-      server 127.0.0.1:7878;
-      server 192.168.10.121:3333 backup;  #热备
-    }
-    error_page 404 https://www.baidu.com; #错误页
-    server {
-        keepalive_requests 120; #单连接请求上限次数。
-        listen       4545;   #监听端口
-        server_name  127.0.0.1;   #监听地址       
-        location  ~*^.+$ {       #请求的url过滤，正则匹配，~为区分大小写，~*为不区分大小写。
-           #root path;  #根目录
-           #index vv.txt;  #设置默认页
-           proxy_pass  http://mysvr;  #请求转向mysvr 定义的服务器列表
-           deny 127.0.0.1;  #拒绝的ip
-           allow 172.18.5.54; #允许的ip           
-        } 
-    }
-}
-</code></pre>
+<figure class="highlight brainfuck"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-comment">#</span> <span class="hljs-comment">开启service</span> <span class="hljs-comment">firewalld</span> <span class="hljs-comment">start#</span> <span class="hljs-comment">重启service</span> <span class="hljs-comment">firewalld</span> <span class="hljs-comment">restart#</span> <span class="hljs-comment">关闭service</span> <span class="hljs-comment">firewalld</span> <span class="hljs-comment">stop#</span> <span class="hljs-comment">查看防火墙规则firewall</span><span class="hljs-literal">-</span><span class="hljs-comment">cmd</span> --<span class="hljs-comment">list</span><span class="hljs-literal">-</span><span class="hljs-comment">all#</span> <span class="hljs-comment">查询端口是否开放firewall</span><span class="hljs-literal">-</span><span class="hljs-comment">cmd</span> --<span class="hljs-comment">query</span><span class="hljs-literal">-</span><span class="hljs-comment">port=8080/tcp#</span> <span class="hljs-comment">开放80端口firewall</span><span class="hljs-literal">-</span><span class="hljs-comment">cmd</span> --<span class="hljs-comment">permanent</span> --<span class="hljs-comment">add</span><span class="hljs-literal">-</span><span class="hljs-comment">port=80/tcp#</span> <span class="hljs-comment">移除端口firewall</span><span class="hljs-literal">-</span><span class="hljs-comment">cmd</span> --<span class="hljs-comment">permanent</span> --<span class="hljs-comment">remove</span><span class="hljs-literal">-</span><span class="hljs-comment">port=8080/tcp#重启防火墙(修改配置后要重启防火墙)firewall</span><span class="hljs-literal">-</span><span class="hljs-comment">cmd</span> --<span class="hljs-comment">reload#</span> <span class="hljs-comment">参数解释1、firwall</span><span class="hljs-literal">-</span><span class="hljs-comment">cmd：是Linux提供的操作firewall的一个工具；2、</span>--<span class="hljs-comment">permanent：表示设置为持久；3、</span>--<span class="hljs-comment">add</span><span class="hljs-literal">-</span><span class="hljs-comment">port：标识添加的端口；</span><br></code></pre></td></tr></tbody></table></figure>
+<h1 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h1><figure class="highlight nginx"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">upstream</span> lb{   <br><span class="hljs-attribute">server</span> <span class="hljs-number">127.0.0.1:8080</span> weight=<span class="hljs-number">1</span>;  <br><span class="hljs-attribute">server</span> <span class="hljs-number">127.0.0.1:8081</span> weight=<span class="hljs-number">1</span>;}<br><span class="hljs-attribute">location</span> / {  <br><span class="hljs-attribute">proxy_pass</span> http://lb;<br>}<br></code></pre></td></tr></tbody></table></figure>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs xml">########### 每个指令必须有分号结束。#################<br>#user administrator administrators;  #配置用户或者组，默认为nobody nobody。<br>#worker_processes 2;  #允许生成的进程数，默认为1<br>#pid /nginx/pid/nginx.pid;   #指定nginx进程运行文件存放地址<br>error_log log/error.log debug;  #制定日志路径，级别。这个设置可以放入全局块，http块，server块，级别以此为：debug|info|notice|warn|error|crit|alert|emerg<br>events {<br>    accept_mutex on;   #设置网路连接序列化，防止惊群现象发生，默认为on<br>    multi_accept on;  #设置一个进程是否同时接受多个网络连接，默认为off<br>    #use epoll;      #事件驱动模型，select|poll|kqueue|epoll|resig|/dev/poll|eventport<br>    worker_connections  1024;    #最大连接数，默认为512<br>}<br>http {<br>    include       mime.types;   #文件扩展名与文件类型映射表<br>    default_type  application/octet-stream; #默认文件类型，默认为text/plain<br>    #access_log off; #取消服务日志    <br>    log_format myFormat '$remote_addr–$remote_user [$time_local] $request $status $body_bytes_sent $http_referer $http_user_agent $http_x_forwarded_for'; #自定义格式<br>    access_log log/access.log myFormat;  #combined为日志格式的默认值<br>    sendfile on;   #允许sendfile方式传输文件，默认为off，可以在http块，server块，location块。<br>    sendfile_max_chunk 100k;  #每个进程每次调用传输数量不能大于设定的值，默认为0，即不设上限。<br>    keepalive_timeout 65;  #连接超时时间，默认为75s，可以在http，server，location块。<br><br>    upstream mysvr {   <br>      server 127.0.0.1:7878;<br>      server 192.168.10.121:3333 backup;  #热备<br>    }<br>    error_page 404 https://www.baidu.com; #错误页<br>    server {<br>        keepalive_requests 120; #单连接请求上限次数。<br>        listen       4545;   #监听端口<br>        server_name  127.0.0.1;   #监听地址       <br>        location  ~*^.+$ {       #请求的url过滤，正则匹配，~为区分大小写，~*为不区分大小写。<br>           #root path;  #根目录<br>           #index vv.txt;  #设置默认页<br>           proxy_pass  http://mysvr;  #请求转向mysvr 定义的服务器列表<br>           deny 127.0.0.1;  #拒绝的ip<br>           allow 172.18.5.54; #允许的ip           <br>        } <br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
 
                 
             </div>
@@ -1132,9 +1078,9 @@ http {
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="随便">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="好歌分享">
                         
-                        <span class="card-title">随便</span>
+                        <span class="card-title">好歌分享</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1158,8 +1104,8 @@ http {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                        <span class="chip bg-color">随笔</span>
+                    <a href="/tags/%E6%AD%8C%E5%8D%95/">
+                        <span class="chip bg-color">歌单</span>
                     </a>
                     
                 </div>
