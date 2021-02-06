@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Spring, imwenwenBlog">
+    <meta name="keywords" content="Swagger学习笔记, imwenwenBlog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Spring | imwenwenBlog</title>
+    <title>Swagger学习笔记 | imwenwenBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -318,12 +318,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Spring</h1>
+                    <h1 class="description center-align post-title">Swagger学习笔记</h1>
                 </div>
             </div>
         </div>
@@ -439,8 +439,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/SpringCloud/">
-                                <span class="chip bg-color">SpringCloud</span>
+                            <a href="/tags/JavaEE/">
+                                <span class="chip bg-color">JavaEE</span>
                             </a>
                         
                     </div>
@@ -451,8 +451,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Spring/" class="post-category">
-                                Spring
+                            <a href="/categories/JavaEE/" class="post-category">
+                                JavaEE
                             </a>
                         
                     </div>
@@ -464,28 +464,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-01-28
+                    2021-02-06
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-30
+                    2021-02-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    230
+                    459
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -505,12 +505,101 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="SpringCloud"><a href="#SpringCloud" class="headerlink" title="SpringCloud"></a>SpringCloud</h1><h2 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h2><p>Spring Cloud是一系列框架的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%9C%89%E5%BA%8F%E9%9B%86%E5%90%88/994839">有序集合</a>。它利用Spring Boot的开发便利性巧妙地简化了分布式系统基础设施的开发，如服务发现注册、配置中心、消息总线、负载均衡、断路器、数据监控等，都可以用Spring Boot的开发风格做到一键启动和部署。Spring Cloud并没有重复制造轮子，它只是将各家公司开发的比较成熟、经得起实际考验的服务框架组合起来，通过Spring Boot风格进行再封装屏蔽掉了复杂的配置和实现原理，最终给开发者留出了一套简单易懂、易部署和易维护的分布式系统开发工具包。</p>
-<h2 id="在哪里？"><a href="#在哪里？" class="headerlink" title="在哪里？"></a>在哪里？</h2><p>中文文档：</p>
-<p><a target="_blank" rel="noopener" href="https://www.bookstack.cn/read/spring-cloud-docs/docs-index.md">https://www.bookstack.cn/read/spring-cloud-docs/docs-index.md</a></p>
-<p>官网：</p>
-<p><a target="_blank" rel="noopener" href="https://cloud.spring.io/spring-cloud-static/Hoxton.SR1/reference/htmlsingle/">https://cloud.spring.io/spring-cloud-static/Hoxton.SR1/reference/htmlsingle/</a></p>
-<h2 id="去哪下？"><a href="#去哪下？" class="headerlink" title="去哪下？"></a>去哪下？</h2><h2 id="怎么玩？"><a href="#怎么玩？" class="headerlink" title="怎么玩？"></a>怎么玩？</h2>
+                <h2 id="一、依赖引入"><a href="#一、依赖引入" class="headerlink" title="一、依赖引入"></a>一、依赖引入</h2><pre class="line-numbers language-properties"><code class="language-properties"> &lt;!--swagger-->
+            &lt;dependency>
+                &lt;groupId>io.springfox&lt;/groupId>
+                &lt;artifactId>springfox-swagger2&lt;/artifactId>
+                &lt;version>2.7.0&lt;/version>
+            &lt;/dependency>
+<span class="token attr-name">            &lt;!--swagger</span> <span class="token attr-value">ui--></span>
+            &lt;dependency>
+                &lt;groupId>io.springfox&lt;/groupId>
+                &lt;artifactId>springfox-swagger-ui&lt;/artifactId>
+                &lt;version>2.7.0&lt;/version>
+            &lt;/dependency>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="二、配置config类"><a href="#二、配置config类" class="headerlink" title="二、配置config类"></a>二、配置config类</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>imwenwen<span class="token punctuation">.</span>config<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Bean<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Configuration<span class="token punctuation">;</span>
+<span class="token keyword">import</span> springfox<span class="token punctuation">.</span>documentation<span class="token punctuation">.</span>builders<span class="token punctuation">.</span>ApiInfoBuilder<span class="token punctuation">;</span>
+<span class="token keyword">import</span> springfox<span class="token punctuation">.</span>documentation<span class="token punctuation">.</span>builders<span class="token punctuation">.</span>PathSelectors<span class="token punctuation">;</span>
+<span class="token keyword">import</span> springfox<span class="token punctuation">.</span>documentation<span class="token punctuation">.</span>builders<span class="token punctuation">.</span>RequestHandlerSelectors<span class="token punctuation">;</span>
+<span class="token keyword">import</span> springfox<span class="token punctuation">.</span>documentation<span class="token punctuation">.</span>service<span class="token punctuation">.</span>ApiInfo<span class="token punctuation">;</span>
+<span class="token keyword">import</span> springfox<span class="token punctuation">.</span>documentation<span class="token punctuation">.</span>service<span class="token punctuation">.</span>Contact<span class="token punctuation">;</span>
+<span class="token keyword">import</span> springfox<span class="token punctuation">.</span>documentation<span class="token punctuation">.</span>spi<span class="token punctuation">.</span>DocumentationType<span class="token punctuation">;</span>
+<span class="token keyword">import</span> springfox<span class="token punctuation">.</span>documentation<span class="token punctuation">.</span>spring<span class="token punctuation">.</span>web<span class="token punctuation">.</span>plugins<span class="token punctuation">.</span>Docket<span class="token punctuation">;</span>
+<span class="token keyword">import</span> springfox<span class="token punctuation">.</span>documentation<span class="token punctuation">.</span>swagger2<span class="token punctuation">.</span>annotations<span class="token punctuation">.</span>EnableSwagger2<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * @Author Imwenwen
+ * @Date 2021-01-25 14:48
+ * @ClassName swaggerConfig
+ **/</span>
+<span class="token annotation punctuation">@Configuration</span>
+<span class="token annotation punctuation">@EnableSwagger2</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">swaggerConfig</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Bean</span>
+
+    <span class="token keyword">public</span> Docket <span class="token function">createRestApi</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Docket</span><span class="token punctuation">(</span>DocumentationType<span class="token punctuation">.</span>SWAGGER_2<span class="token punctuation">)</span>
+
+                <span class="token punctuation">.</span><span class="token function">apiInfo</span><span class="token punctuation">(</span><span class="token function">apiInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">groupName</span><span class="token punctuation">(</span><span class="token string">"Imwenwen"</span><span class="token punctuation">)</span>
+
+                <span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+                <span class="token punctuation">.</span><span class="token function">apis</span><span class="token punctuation">(</span>RequestHandlerSelectors<span class="token punctuation">.</span><span class="token function">basePackage</span><span class="token punctuation">(</span><span class="token string">"com.imwenwen.controller"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+                <span class="token punctuation">.</span><span class="token function">paths</span><span class="token punctuation">(</span>PathSelectors<span class="token punctuation">.</span><span class="token function">any</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+                <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+    <span class="token keyword">private</span> ApiInfo <span class="token function">apiInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ApiInfoBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+                <span class="token punctuation">.</span><span class="token function">title</span><span class="token punctuation">(</span><span class="token string">"Imwnewen的SwaggerApi"</span><span class="token punctuation">)</span>
+
+                <span class="token punctuation">.</span><span class="token function">description</span><span class="token punctuation">(</span><span class="token string">"ImwenwenSwaggerTest"</span><span class="token punctuation">)</span>
+
+                <span class="token punctuation">.</span><span class="token function">termsOfServiceUrl</span><span class="token punctuation">(</span><span class="token string">"http://175.24.57.101:8081/"</span><span class="token punctuation">)</span>
+
+                <span class="token punctuation">.</span><span class="token function">contact</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Contact</span><span class="token punctuation">(</span><span class="token string">"imwenwen"</span><span class="token punctuation">,</span><span class="token string">"http://175.24.57.101:8081/"</span><span class="token punctuation">,</span><span class="token string">"1103403832@qq.com"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+                <span class="token punctuation">.</span><span class="token function">version</span><span class="token punctuation">(</span><span class="token string">"1.0"</span><span class="token punctuation">)</span>
+
+                <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="三、常用注解整理"><a href="#三、常用注解整理" class="headerlink" title="三、常用注解整理"></a>三、常用注解整理</h2><pre class="line-numbers language-properties"><code class="language-properties"><span class="token attr-name">@Api</span> <span class="token attr-value">用在类上，说明该类的作用。可以标记一个 Controller 类作为 Swagger 文档资源</span>
+<span class="token attr-name">      @Api(tags</span> <span class="token punctuation">=</span> <span class="token attr-value">"登录控制器")</span>
+<span class="token attr-name">@ApiModel</span> <span class="token attr-value">用在类上，表示对类进行说明，用于实体类中的参数接收说明。</span>
+<span class="token attr-name">      @ApiModel(value</span><span class="token punctuation">=</span><span class="token attr-value">"EduChapter对象", description="课程")</span>
+<span class="token attr-name">@ApiModelProperty()</span> <span class="token attr-value">用于字段，表示对 model 属性的说明</span>
+<span class="token attr-name">      @ApiModelProperty(value</span> <span class="token punctuation">=</span> <span class="token attr-value">"课程ID")</span>
+<span class="token attr-name">@ApiParam</span> <span class="token attr-value">用于 Controller 中方法的参数说明</span>
+<span class="token attr-name">      public</span> <span class="token attr-value">T removeTeacher(@ApiParam(name = "id", value = "讲师ID", required = true) @PathVariable String id)</span>
+<span class="token attr-name">@ApiOperation</span> <span class="token attr-value">用在 Controller 里的方法上，说明方法的作用</span>
+<span class="token attr-name">      @ApiOperation(value</span> <span class="token punctuation">=</span> <span class="token attr-value">"根据id删除教师")</span>
+<span class="token attr-name">@ApiResponse</span> <span class="token attr-value">用于方法上，说明接口响应的一些信息；</span>
+<span class="token attr-name">@ApiResponses</span> <span class="token attr-value">组装了多个 @ApiResponse</span>
+<span class="token attr-name">      @ApiResponses({</span> <span class="token attr-value">@ApiResponse(code = 200, message = "OK", response = UserDto.class) })</span>
+<span class="token attr-name">@ApiImplicitParam</span> <span class="token attr-value">和 @ApiImplicitParams</span>
+        name：参数名，对应方法中单独的参数名称。
+        value：参数中文说明。
+        required：是否必填。
+<span class="token attr-name">        paramType：参数类型，取值为</span> <span class="token attr-value">path、query、body、header、form。</span>
+        dataType：参数数据类型。
+        defaultValue：默认值。
+                           
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="四、启动项目"><a href="#四、启动项目" class="headerlink" title="四、启动项目"></a>四、启动项目</h2><p>通过访问这里端口号为8001根据实际来进行修改</p>
+<p><a target="_blank" rel="noopener" href="http://localhost:8001/swagger-ui.html">http://localhost:8001/swagger-ui.html</a></p>
+
                 
             </div>
             <hr/>
@@ -536,7 +625,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2020/01/28/SpringCloud/">http://example.com/2020/01/28/SpringCloud/</a>
+                    <a href="http://example.com/2021/02/06/Swaggerui/">http://example.com/2021/02/06/Swaggerui/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -574,8 +663,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/SpringCloud/">
-                                    <span class="chip bg-color">SpringCloud</span>
+                                <a href="/tags/JavaEE/">
+                                    <span class="chip bg-color">JavaEE</span>
                                 </a>
                             
                         </div>
@@ -1017,13 +1106,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/01/30/ngnix/">
+                <a href="/2021/02/06/mybaitsplus/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Nginx学习">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="mybaitsplus">
                         
-                        <span class="card-title">Nginx学习</span>
+                        <span class="card-title">mybaitsplus</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1034,14 +1123,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-30
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-06
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" class="post-category">
-                                    负载均衡
+                            <a href="/categories/javaEE/" class="post-category">
+                                    javaEE
                                 </a>
                             
                             
@@ -1051,8 +1140,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Ngnix/">
-                        <span class="chip bg-color">Ngnix</span>
+                    <a href="/tags/javaEE/">
+                        <span class="chip bg-color">javaEE</span>
                     </a>
                     
                 </div>
@@ -1063,16 +1152,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/01/28/SpringCloud/">
+                <a href="/2021/02/03/%E7%81%AB%E5%BD%B1%E5%BF%8D%E8%80%85%E8%B6%85%E7%87%83/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Spring">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="火影忍者">
                         
-                        <span class="card-title">Spring</span>
+                        <span class="card-title">火影忍者</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1083,26 +1172,21 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-03
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Spring/" class="post-category">
-                                    Spring
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            imwenwen
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/SpringCloud/">
-                        <span class="chip bg-color">SpringCloud</span>
+                    <a href="/tags/%E5%8A%A8%E6%BC%AB/">
+                        <span class="chip bg-color">动漫</span>
                     </a>
                     
                 </div>
