@@ -33,12 +33,19 @@
     }
 }
 
-body {
+/*body {
     background-color: #eaeaea;
     margin: 0;
     color: #34495e;
     overflow-x: hidden;
     overflow-y: auto;
+}*/
+body {
+    /* background-color: #eaeaea; */
+    background: linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35) ) 0% 0% /     cover, url("https://imwenwen-edu.oss-cn-beijing.aliyuncs.com/2021/02/04/9.jpg"), url("https://imwenwen-edu.oss-cn-beijing.aliyuncs.com/2021/02/04/9.jpg") 0px 0px;
+    background-attachment: fixed;
+    margin: 0;
+    color: #7F95D1;
 }
 
 h1 {
@@ -263,8 +270,11 @@ mark {
     margin-bottom: 0;
 }
 
-.bg-color {
+/*.bg-color {
     background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+}*/
+.bg-color {
+    background-image: linear-gradient(to right, #EEEEEE 0%, #EEEEEE 100%);
 }
 
 .text-color {
@@ -587,7 +597,7 @@ header .go-back i {
     display: block;
     left: 0;
     top: 0;
-   /** content: "";**/
+    content: "";
 }
 
 .bg-cover .container {
