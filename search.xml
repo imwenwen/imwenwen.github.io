@@ -13,16 +13,16 @@
       
       <categories>
           
-          <category> springcloud </category>
+          <category> SpringCloud </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> spring </tag>
+            <tag> Spring </tag>
             
-            <tag> springcloud </tag>
+            <tag> SpringCloud </tag>
             
             <tag> Seata </tag>
             
@@ -42,16 +42,16 @@
       
       <categories>
           
-          <category> springcloud </category>
+          <category> SpringCloud </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> spring </tag>
+            <tag> Spring </tag>
             
-            <tag> springcloud </tag>
+            <tag> SpringCloud </tag>
             
             <tag> Sentinel </tag>
             
@@ -71,16 +71,16 @@
       
       <categories>
           
-          <category> springcloud </category>
+          <category> SpringCloud </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> spring </tag>
+            <tag> Spring </tag>
             
-            <tag> springcloud </tag>
+            <tag> SpringCloud </tag>
             
             <tag> Nacos </tag>
             
@@ -132,7 +132,7 @@
       
         <tags>
             
-            <tag> mybaitsplus </tag>
+            <tag> Mybaitsplus </tag>
             
         </tags>
       
