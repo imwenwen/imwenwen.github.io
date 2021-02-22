@@ -36,9 +36,9 @@
     <category term="springcloud" scheme="http://example.com/categories/springcloud/"/>
     
     
-    <category term="Spring" scheme="http://example.com/tags/Spring/"/>
-    
     <category term="SpringCloud" scheme="http://example.com/tags/SpringCloud/"/>
+    
+    <category term="Spring" scheme="http://example.com/tags/Spring/"/>
     
     <category term="Seata" scheme="http://example.com/tags/Seata/"/>
     
@@ -64,9 +64,9 @@
     <category term="springcloud" scheme="http://example.com/categories/springcloud/"/>
     
     
-    <category term="Spring" scheme="http://example.com/tags/Spring/"/>
-    
     <category term="SpringCloud" scheme="http://example.com/tags/SpringCloud/"/>
+    
+    <category term="Spring" scheme="http://example.com/tags/Spring/"/>
     
     <category term="Sentinel" scheme="http://example.com/tags/Sentinel/"/>
     
@@ -92,9 +92,9 @@
     <category term="springcloud" scheme="http://example.com/categories/springcloud/"/>
     
     
-    <category term="Spring" scheme="http://example.com/tags/Spring/"/>
-    
     <category term="SpringCloud" scheme="http://example.com/tags/SpringCloud/"/>
+    
+    <category term="Spring" scheme="http://example.com/tags/Spring/"/>
     
     <category term="Nacos" scheme="http://example.com/tags/Nacos/"/>
     
